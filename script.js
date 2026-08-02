@@ -1,4 +1,4 @@
-// ===== Theme Toggle =====
+// Theme Toggle 
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
@@ -19,7 +19,7 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', next);
 });
 
-// ===== Mobile Menu =====
+// Mobile Menu 
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
@@ -34,13 +34,13 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// ===== Header scroll effect =====
+// Header scroll effect 
 const header = document.querySelector('.header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// ===== Typing Effect =====
+// Typing Effect 
 const roles = [
   'Desarrollador Backend',
   'Creador de experiencias digitales',
@@ -83,7 +83,7 @@ function type() {
 // Iniciar después de un pequeño delay
 setTimeout(type, 800);
 
-// ===== Scroll Animations (Intersection Observer) =====
+// Scroll Animations (Intersection Observer)
 const fadeElements = document.querySelectorAll(
   '.section-title, .about-grid, .skill-card, .project-card, .contact-content, .hero-content'
 );
@@ -103,7 +103,7 @@ const observer = new IntersectionObserver(
 
 fadeElements.forEach(el => observer.observe(el));
 
-// ===== Active nav link on scroll =====
+// Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
