@@ -76,13 +76,34 @@ img { max-width: 100%; display: block; }
 }
 
 .logo {
+  display: inline-flex;          /* ← clave */
+  align-items: center;           /* ← centra verticalmente */
+  gap: 0.5rem;                   /* espacio entre el texto y la foto */
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.4rem;
   letter-spacing: -0.02em;
+  text-decoration: none;
+  color: inherit;
 }
 
-.logo span { color: var(--accent); }
+.logo span {
+  color: var(--accent);          /* el { } y el punto en color de acento */
+}
+
+#profile-photo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.logo:hover #profile-photo {
+  border-color: var(--accent);
+  transform: scale(1.08);
+}
 
 .nav-links {
   display: flex;
