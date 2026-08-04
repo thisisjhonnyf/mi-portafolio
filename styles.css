@@ -76,9 +76,9 @@ img { max-width: 100%; display: block; }
 }
 
 .logo {
-  display: inline-flex;          /* ← clave */
-  align-items: center;           /* ← centra verticalmente */
-  gap: 0.1rem;                   /* espacio entre el texto y la foto */
+  display: inline-flex;          
+  align-items: center;           
+  gap: 0.1rem;                   
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.4rem;
@@ -101,7 +101,6 @@ img { max-width: 100%; display: block; }
 }
 
 .logo:hover #profile-photo {
-  border-color: var(--accent);
   transform: scale(1.08);
 }
 
@@ -112,13 +111,13 @@ img { max-width: 100%; display: block; }
 
 .nav-links a {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text);
   transition: color var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .nav-actions {
