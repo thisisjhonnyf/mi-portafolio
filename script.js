@@ -2,21 +2,29 @@
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
-// Preferencia guardada o sistema
+// Por defecto siempre dark. Solo usamos light si el usuario lo eligió antes.
 const savedTheme = localStorage.getItem('theme');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (savedTheme) {
-  html.setAttribute('data-theme', savedTheme);
-} else if (!systemPrefersDark) {
+if (savedTheme === 'light') {
   html.setAttribute('data-theme', 'light');
+} else {
+  // Asegura que esté en dark (elimina el atributo o lo pone explícitamente)
+  html.removeAttribute('data-theme');
+  // o también puedes usar: html.setAttribute('data-theme', 'dark');
 }
 
 themeToggle.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  const next = current === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
+  const isLight = html.getAttribute('data-theme') === 'light';
+  
+  if (isLight) {
+    // Cambiar a dark
+    html.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    // Cambiar a light
+    html.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
 });
 
 // Telefono Menu 
